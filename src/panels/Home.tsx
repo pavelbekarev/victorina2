@@ -1,5 +1,6 @@
 import React, { MouseEventHandler } from 'react';
 import PropTypes from 'prop-types';
+import "@vkontakte/vkui/dist/vkui.css";
 
 import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar } from '@vkontakte/vkui';
 import { UserInfo } from '@vkontakte/vk-bridge';
@@ -14,7 +15,7 @@ const Home: React.FC<Props> = ({ id, go, fetchedUser }) => (
 	<Panel id={id}>
 		<PanelHeader>Example</PanelHeader>
 		{fetchedUser &&
-		<Group header={<Header mode="secondary">User Data Fetched with VK Bridge</Header>}>
+		<Group header={<Header mode="secondary">Викторина</Header>}>
 			<Cell
 				before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
 				subtitle={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
@@ -26,7 +27,7 @@ const Home: React.FC<Props> = ({ id, go, fetchedUser }) => (
 		<Group header={<Header mode="secondary">Navigation Example</Header>}>
 			<Div>
 				<Button stretched size="l" mode="secondary" onClick={go} data-to="persik">
-					Show me the Persik, please
+					Покажи мне эту Викторину
 				</Button>
 			</Div>
 		</Group>
